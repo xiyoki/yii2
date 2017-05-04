@@ -20,7 +20,7 @@ use frontend\models\Test;
 class HelloController extends Controller
 {
 
-	//数据模型之查询数据表数据
+	//程序1：数据模型之查询数据表数据
 	//方案1：使用活动记录的findBySql()方法
 	public function actionIndex()
 	{
@@ -32,7 +32,7 @@ class HelloController extends Controller
 		print_r($results);
 	}
 
-	//数据模型之查询数据表数据
+	//程序2：数据模型之查询数据表数据
 	//方案2：使用活动记录的find()方法
 	public function actionIndex()
 	{
@@ -58,7 +58,7 @@ class HelloController extends Controller
 		$results4 = Test::find()->where(['like','title','title3'])->all();
 	}
 
-	//数据模型之查询数据表数据
+	//程序3：数据模型之查询数据表数据
 	//方案3：使用活动记录的findOne()或findAll()方法
 	//方案特点：代码更加简洁，缺点功能不全。
 	public function actionIndex()
@@ -82,7 +82,7 @@ class HelloController extends Controller
 		]);
 	}
 
-	//数据模型之查询数据表数据
+	//程序4：数据模型之查询数据表数据
 	//专题：yii框架数据表查询优化
 	public function actionIndex()
 	{
@@ -117,7 +117,7 @@ class HelloController extends Controller
 
 	}
 
-	//数据模型之删除数据表数据
+	//程序5：数据模型之删除数据表数据
 	public function actionIndex()
 	{
 		//方案1：使用ActiveRecord实例的delete()方法。
@@ -142,7 +142,7 @@ class HelloController extends Controller
 		//等价于：Test::deleteAll('id>:id',[':id'=>3]);
 	}
 
-	//数据模型之向数据表添加数据(记录)
+	//程序6：数据模型之向数据表添加数据(记录)
 	public function actionIndex()
 	{
 		//用法：首先创建ActiveRecord实例，然后通过'对象->属性'的方式映射数据表记录中的字段，并赋值。添加之前要启动验证：验证数据是否符合验证规则。验证无误之后才能将其保存到数据表中。注意验证规则在活动记录中定义。
@@ -164,7 +164,7 @@ class HelloController extends Controller
 		$test->save();
 	}
 
-	//数据模型之修改数据表数据
+	//程序7：数据模型之修改数据表数据
 	public function actionIndex()
 	{	
 		//目的：修改数据表中的某条记录
@@ -175,8 +175,8 @@ class HelloController extends Controller
 		$test->save();
 	}
 
-	//数据模型之关联查询
-	//获取关联数据
+	//程序8：数据模型之关联查询
+	//获取关联表中的数据
 	public function actionIndex()
 	{
 		//概述：使用 ActiveRecord实例 的方法也可以查询数据表的关联数据（如：选出表A的数据，可以拉出表B的关联数据）
@@ -199,7 +199,7 @@ class HelloController extends Controller
 		}
 	}
 
-	//数据模型之关联查询
+	//程序9：数据模型之关联查询
 	//解决关联查询的性能问题 1
 	public function actionIndex()
 	{
@@ -219,7 +219,7 @@ class HelloController extends Controller
 		}
 	}
 
-	//数据模型之关联查询
+	//程序10：数据模型之关联查询
 	//解决关联查询的性能问题 2
 	public function actionIndex()
 	{
